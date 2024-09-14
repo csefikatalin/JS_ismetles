@@ -4,7 +4,7 @@ export default class Kartya {
   constructor(kutya, szuloElem) {
     /* inicializálja az adattagokat */
     this.#kutya = kutya;
-    this.szuloElem = szuloElem;  
+    this.szuloElem = szuloElem; 
     
     this.#egyKutyaKiiras();
     this.gombElem = $(".kivalaszt:last");
@@ -16,8 +16,10 @@ export default class Kartya {
     /* eseménykezelőt a gombokra */
     
     this.gombElem.on("click", ()=> {
-      console.log(this); //az az elem, amelyik kiváltotta az eseményt
-        
+      //console.log(this); //az az elem, amelyik kiváltotta az eseményt
+        //létrehozunk egy saját eseményt. 
+        const e=new CustomEvent("kivalaszt",{detail:this.#kutya})
+        window.dispatchEvent(e)
     });
   }
 
