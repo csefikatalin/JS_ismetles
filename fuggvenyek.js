@@ -3,7 +3,7 @@ export function cimKiiras(cim) {
     //Megfogjuk a h1-es teget
     //const h1Elem=document.querySelector("header h1")
     const h1Elem = $("header");
-    console.log(h1Elem);
+    
     //h1Elem.innerHTML += "<p>" + cim + "</p>";
     h1Elem.append(`<p> ${cim} </p>`);
   }
